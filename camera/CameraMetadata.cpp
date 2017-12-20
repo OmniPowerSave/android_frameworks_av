@@ -34,6 +34,9 @@ typedef Parcel::ReadableBlob ReadableBlob;
 
 CameraMetadata::CameraMetadata() :
         mBuffer(NULL), mLocked(false) {
+	mReserved[0] = 'R';
+	mReserved[1] = 'S';
+	mReserved[2] = 'V';
 }
 
 CameraMetadata::CameraMetadata(size_t entryCapacity, size_t dataCapacity) :
@@ -72,6 +75,7 @@ CameraMetadata &CameraMetadata::operator=(const camera_metadata_t *buffer) {
 
 CameraMetadata::~CameraMetadata() {
     mLocked = false;
+    mReserved[0] = 'O';
     clear();
 }
 
