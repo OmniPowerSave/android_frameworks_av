@@ -15,7 +15,7 @@
  */
 
 #define LOG_TAG "EffectVisualizer"
-//#define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
 
 #include <assert.h>
 #include <inttypes.h>

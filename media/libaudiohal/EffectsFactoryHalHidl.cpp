@@ -15,7 +15,7 @@
  */
 
 #define LOG_TAG "EffectsFactoryHalHidl"
-//#define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
 
 #include <cutils/native_handle.h>
 

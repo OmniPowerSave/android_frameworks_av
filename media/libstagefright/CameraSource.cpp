@@ -16,7 +16,7 @@
 
 #include <inttypes.h>
 
-//#define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
 #define LOG_TAG "CameraSource"
 #include <utils/Log.h>
 
@@ -161,6 +161,10 @@ static int32_t getColorFormat(const char* colorFormat) {
     if (!strcmp(colorFormat, CameraParameters::PIXEL_FORMAT_ANDROID_OPAQUE)) {
         return OMX_COLOR_FormatAndroidOpaque;
     }
+
+    if (!strcmp(colorFormat, "YVU420SemiPlanar")) {  
+	return OMX_QCOM_COLOR_FormatYVU420SemiPlanar; 
+    } 
 
     ALOGE("Uknown color format (%s), please add it to "
          "CameraSource::getColorFormat", colorFormat);
@@ -1399,6 +1403,7 @@ MetadataBufferType CameraSource::metaDataStoredInVideoBuffers() const {
     ALOGV("metaDataStoredInVideoBuffers");
 
 #ifdef CAMCORDER_GRALLOC_SOURCE
+    ALOGV("CAMCORDER_GRALLOC_SOURCE");
     return kMetadataBufferTypeGrallocSource;
 #endif
 

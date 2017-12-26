@@ -15,7 +15,7 @@
  */
 
 #define LOG_TAG "AudioResampler"
-//#define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
 
 #include <pthread.h>
 #include <stdint.h>

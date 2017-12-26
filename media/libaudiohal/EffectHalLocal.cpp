@@ -15,7 +15,7 @@
  */
 
 #define LOG_TAG "EffectHalLocal"
-//#define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
 
 #include <media/EffectsFactoryApi.h>
 #include <utils/Log.h>

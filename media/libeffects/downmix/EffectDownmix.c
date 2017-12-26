@@ -15,7 +15,7 @@
  */
 
 #define LOG_TAG "EffectDownmix"
-//#define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
 
 #include <inttypes.h>
 #include <stdbool.h>

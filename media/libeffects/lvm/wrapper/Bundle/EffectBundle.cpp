@@ -19,7 +19,7 @@ typedef float LVM_FLOAT;
 #endif
 #define LOG_TAG "Bundle"
 #define ARRAY_SIZE(array) (sizeof (array) / sizeof (array)[0])
-//#define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
 
 #include <assert.h>
 #include <inttypes.h>

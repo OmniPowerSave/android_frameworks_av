@@ -15,7 +15,7 @@
  */
 
 #define LOG_TAG "EffectReverb"
-//#define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
 
 #include <stdbool.h>
 #include <stdlib.h>

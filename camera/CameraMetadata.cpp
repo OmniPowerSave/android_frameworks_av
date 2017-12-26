@@ -33,25 +33,25 @@ typedef Parcel::WritableBlob WritableBlob;
 typedef Parcel::ReadableBlob ReadableBlob;
 
 CameraMetadata::CameraMetadata() :
-        mBuffer(NULL), mLocked(false) {
-	mReserved[0] = 'R';
-	mReserved[1] = 'S';
-	mReserved[2] = 'V';
+        mBuffer(NULL), mReserved1(false), mReserved2(false), mReserved3(false), mLocked(false) {
+	(void)mReserved1;
+	(void)mReserved2;
+	(void)mReserved3;
 }
 
 CameraMetadata::CameraMetadata(size_t entryCapacity, size_t dataCapacity) :
-        mLocked(false)
+         mReserved1(false), mReserved2(false), mReserved3(false), mLocked(false)
 {
     mBuffer = allocate_camera_metadata(entryCapacity, dataCapacity);
 }
 
 CameraMetadata::CameraMetadata(const CameraMetadata &other) :
-        mLocked(false) {
+        mReserved1(false), mReserved2(false), mReserved3(false), mLocked(false) {
     mBuffer = clone_camera_metadata(other.mBuffer);
 }
 
 CameraMetadata::CameraMetadata(camera_metadata_t *buffer) :
-        mBuffer(NULL), mLocked(false) {
+        mBuffer(NULL), mReserved1(false), mReserved2(false), mReserved3(false), mLocked(false) {
     acquire(buffer);
 }
 
@@ -69,13 +69,12 @@ CameraMetadata &CameraMetadata::operator=(const camera_metadata_t *buffer) {
         camera_metadata_t *newBuffer = clone_camera_metadata(buffer);
         clear();
         mBuffer = newBuffer;
-    }
+    } 
     return *this;
 }
 
 CameraMetadata::~CameraMetadata() {
     mLocked = false;
-    mReserved[0] = 'O';
     clear();
 }
 

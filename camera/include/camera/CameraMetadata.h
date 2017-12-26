@@ -221,8 +221,11 @@ class CameraMetadata: public Parcelable {
             const VendorTagDescriptor* vTags, uint32_t *tag);
 
   private:
+
     camera_metadata_t *mBuffer;
-    volatile char      mReserved[3];
+    volatile bool      mReserved1;
+    volatile bool      mReserved2;
+    volatile bool      mReserved3;
     mutable bool       mLocked;
 
     /**

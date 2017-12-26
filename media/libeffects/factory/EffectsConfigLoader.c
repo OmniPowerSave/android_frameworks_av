@@ -15,7 +15,7 @@
  */
 
 #define LOG_TAG "EffectsFactoryConfigLoader"
-//#define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
 
 #include <dlfcn.h>
 #include <stdlib.h>

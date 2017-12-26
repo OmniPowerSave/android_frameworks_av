@@ -17,7 +17,7 @@
 #include <stdlib.h>
 #include <string.h>
 #define LOG_TAG "PreProcessing"
-//#define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
 #include <utils/Log.h>
 #include <utils/Timers.h>
 #include <hardware/audio_effect.h>

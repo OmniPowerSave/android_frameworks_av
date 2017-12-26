@@ -1675,11 +1675,13 @@ status_t OMXNodeInstance::emptyBuffer_l(
         static_cast<BufferMeta *>(header->pAppPrivate);
 
 #ifndef CAMCORDER_GRALLOC_SOURCE
+    ALOGV("CAMCORDER_GRALLOC_SOURCE - OFF");
     // set up proper filled length if component is configured for gralloc metadata mode
     // ignore rangeOffset in this case (as client may be assuming ANW meta buffers).
     if (mMetadataType[kPortIndexInput] == kMetadataBufferTypeGrallocSource) {
         header->nFilledLen = rangeLength ? sizeof(VideoGrallocMetadata) : 0;
 #else
+    ALOGV("CAMCORDER_GRALLOC_SOURCE");
     sp<ABuffer> backup = buffer_meta->getBuffer(header, false /* limit */);
     sp<ABuffer> codec = buffer_meta->getBuffer(header, false /* limit */);
 
